@@ -19,7 +19,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <template>
     <div class="newtaskcontainer">
       <div class="newtask">
-        <input class="tasksummary" type="text" value="" id="summaryinput" placeholder="Enter new task"/>
+        <input class="tasksummary" type="text" value="{{tsummary}}" id="summaryinput" placeholder="Enter new task"/>
       </div>
     </div>
   </template>
@@ -28,20 +28,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 (function() {
   Polymer({
     is: 'new-task',
-    ready: function() {
-      $.summaryinput.addEventListener('change', saveTaskHandler);
+    listeners: {
+      'keyup' : 'saveTaskHandler'
     },
-    saveTaskHandler: function() {
-
-    }
+    saveTaskHandler: function(event) {
+        console.log(event.keyCode);
+      if (event.keyCode == 13) {
+        console.log(tsummary);
+      }
+    },
 
     properties: {
-      foo: {
-        type: String,
-        value: 'bar',
-        notify: true
       }
-    }
   });
 })();
 </script>
