@@ -8,6 +8,7 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
 
+<link rel="import" href="../../bower_components/paper-input/paper-input.html">
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
 <dom-module id="new-task">
@@ -19,7 +20,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <template>
     <div class="newtaskcontainer">
       <div class="newtask">
-        <input class="tasksummary" type="text" value="{{tsummary}}" id="summaryinput" placeholder="Enter new task"/>
+        <paper-input class="tasksummary" type="text"  id="summaryinput" label="Enter new task" ></paper-input>
       </div>
     </div>
   </template>
@@ -32,14 +33,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       'keyup' : 'saveTaskHandler'
     },
     saveTaskHandler: function(event) {
-        console.log(event.keyCode);
       if (event.keyCode == 13) {
-        console.log(tsummary);
+        console.log(this.$.summaryinput.value);
       }
     },
 
-    properties: {
-      }
   });
 })();
 </script>
