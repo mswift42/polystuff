@@ -15,12 +15,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <style>
     :host {
       display: block;
+      padding:1em;
     }
   </style>
   <template>
     <div class="newtaskcontainer">
       <div class="newtask">
-        <paper-input class="tasksummary" type="text"  id="summaryinput" label="Enter new task" ></paper-input>
+        <paper-input class="tasksummary"   id="summaryinput" label="Enter new task" ></paper-input>
       </div>
     </div>
   </template>
@@ -36,6 +37,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       if (event.keyCode == 13) {
         console.log(this.$.summaryinput.value);
       }
+      
     },
 
   });
