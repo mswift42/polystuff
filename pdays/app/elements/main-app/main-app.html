@@ -18,8 +18,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
   </style>
   <template>
-    <new-task tasks="{{tasks}}"></new-task>
-    <list-tasks tasks="{{tasks}}"></list-tasks>
+    <new-task tasks="{{tasklist}}"></new-task>
+    <list-tasks tasks="{{tasklist}}"></list-tasks>
   </template>
 </dom-module>
 <script>
@@ -28,7 +28,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     is: 'main-app',
 
     properties: {
-      tasks: {
+      tasklist: {
         type: Array,
         value: [],
         notify: true
