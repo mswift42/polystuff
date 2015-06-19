@@ -28,6 +28,11 @@
       },
       listTasks: function() {
         return this.tasks;
+      },
+      deleteTask: function(task) {
+        this.tasks = this.tasks.filter(function(i) {
+          return i.id != task.id;
+        });
       }
     });
   })();
