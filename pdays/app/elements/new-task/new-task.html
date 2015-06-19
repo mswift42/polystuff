@@ -10,6 +10,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../../bower_components/paper-input/paper-input.html">
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../task-model/task-model.html">
 
 <dom-module id="new-task">
   <style>
@@ -19,6 +20,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
   </style>
   <template>
+    <task-model tasks="{{tasks}}"></task-model>
     <div class="newtaskcontainer">
       <div class="newtask">
         <paper-input autofocus="true" class="tasksummary"   id="summaryinput" label="Enter new task" ></paper-input>
