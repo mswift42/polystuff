@@ -35,10 +35,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     },
     saveTaskHandler: function(event) {
       if (event.keyCode == 13) {
-        console.log(this.$.summaryinput.value);
         this.tasks.unshift({"summary": this.$.summaryinput.value});
       }
-      
+
     },
 
   });
