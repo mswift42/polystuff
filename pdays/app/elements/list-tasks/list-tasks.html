@@ -10,6 +10,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../list-task/list-task.html">
+<link rel="import" href="../task-model/task-model.html">
 <dom-module id="list-tasks">
   <style>
     :host {
@@ -17,8 +18,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
   </style>
   <template>
-    <template is="dom-repeat" tasks="{{tasklist}}" >
-      <list-task summary="{{task.summary}}" ></list-task>
+    <task-model tasks="{{tasks}}"></task-model>
+    <template is="dom-repeat" singletasks="{{tasks}}" >
+      <list-task summary="{{singletask.summary}}" ></list-task>
     </template>
   </template>
 </dom-module>
