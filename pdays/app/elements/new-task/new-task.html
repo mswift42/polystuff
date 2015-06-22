@@ -20,7 +20,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
   </style>
   <template>
-    <task-model tasks="{{tasks}}"></task-model>
+    <task-model ></task-model>
     <div class="newtaskcontainer">
       <div class="newtask">
         <paper-input autofocus="true" class="tasksummary"   id="summaryinput" label="Enter new task" ></paper-input>
@@ -36,8 +36,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       'keyup' : 'saveTaskHandler'
     },
     saveTaskHandler: function(event) {
+      var inp = this.$.summaryinput;
       if (event.keyCode == 13) {
-        this.tasks.unshift({"summary": this.$.summaryinput.value});
+        taskservice.addTask({"summary": inp.value})
+        inp.value = '';
       }
 
     },
