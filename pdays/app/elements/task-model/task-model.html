@@ -18,22 +18,31 @@
         tasks: {
           type: Array,
           notify: true
-        }
+        },
+        taskservice: {
+        type: Object,
+        notify: true
+        },
       },
       ready: function() {
         this.tasks = [];
-      },
-      addTask: function(task) {
-        this.tasks.unshift(task);
-      },
-      listTasks: function() {
-        return this.tasks;
-      },
-      deleteTask: function(task) {
-        this.tasks = this.tasks.filter(function(i) {
-          return i.id != task.id;
-        });
-      }
-    });
+      taskservice ={};
+        taskservice.tasks = [];
+        taskservice.addTask= function(task)
+    {
+      this.tasks.unshift(task);
+    };
+
+    taskservice.listTasks= function () {
+      return this.tasks;
+    };
+
+
+    taskservice.deleteTask= function (task) {
+      this.tasks = this.tasks.filter(function (i) {
+        return i.id != task.id;
+      });
+    };
+  },
   })();
 </script>
