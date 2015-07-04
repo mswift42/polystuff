@@ -9,6 +9,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../task-model/task-model.html" >
 <link rel="import" href="../new-task/new-task.html">
 <link rel="import" href="../list-tasks/list-tasks.html">
 <dom-module id="main-app">
@@ -18,8 +19,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
   </style>
   <template>
+    <task-model>
     <new-task ></new-task>
     <list-tasks ></list-tasks>
+    </task-model>
   </template>
 </dom-module>
 <script>
